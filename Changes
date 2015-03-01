@@ -1,6 +1,7 @@
 Revision history for {{$dist->name}}
 
 {{$NEXT}}
+  - mark this distribution as deprecated in metadata
 
 0.09   2014-11-05 03:55:58Z
   - add formal deprecation notice - please use Test::TempDir::Tiny instead!
