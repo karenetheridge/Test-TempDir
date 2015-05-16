@@ -1,6 +1,8 @@
 package Test::TempDir::Factory;
 # ABSTRACT: A factory for creating L<Test::TempDir::Handle> objects
 
+our $VERSION = '0.10';
+
 use Moose;
 use Carp qw(croak carp);
 use File::Spec;
