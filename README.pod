@@ -8,7 +8,7 @@ Test::TempDir - (DEPRECATED) Temporary files support for testing
 
 =head1 VERSION
 
-version 0.09
+version 0.10
 
 =head1 DEPRECATION NOTICE
 
@@ -119,13 +119,9 @@ the same terms as the Perl 5 programming language system itself.
 
 =head1 CONTRIBUTORS
 
-=for stopwords Yuval Kogman Karen Etheridge Florian Ragwitz
+=for stopwords Karen Etheridge Florian Ragwitz
 
 =over 4
-
-=item *
-
-Yuval Kogman <nothingmuch@woobling.org>
 
 =item *
 
