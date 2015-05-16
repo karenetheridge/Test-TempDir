@@ -1,7 +1,7 @@
 package Test::TempDir::Handle;
 # ABSTRACT: A handle for managing a temporary directory root
 
-our $VERSION = '0.10';
+our $VERSION = '0.11';
 
 use Moose;
 use MooseX::Types::Path::Class qw(Dir);
