@@ -40,7 +40,8 @@ foreach my $use_subdir ( 1, 0 ) {
 
     isa_ok( $path, "Path::Class::Dir" );
 
-    ok( $subdir->contains($path), "preferred path used" );
+    ok( $subdir->contains($path), "preferred path used" )
+        or diag "got subdir $subdir, selected path $path";
 
     ok( -d $path, "created" );
 
@@ -72,7 +73,8 @@ foreach my $use_subdir ( 1, 0 ) {
 
     isa_ok( $dir->dir, "Path::Class::Dir" );
 
-    ok( $subdir->contains( $dir->dir ), "created in the right place" );
+    ok( $subdir->contains( $dir->dir ), "created in the right place" )
+        or diag "got subdir $subdir, selected dir $dir";
 
     isa_ok( $dir->lock, "File::NFSLock" );
 
