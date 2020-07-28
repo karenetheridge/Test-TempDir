@@ -3,7 +3,7 @@ use warnings;
 package Test::TempDir;
 # ABSTRACT: (DEPRECATED) Temporary files support for testing
 
-our $VERSION = '0.11';
+our $VERSION = '0.12';
 
 use File::Temp ();
 
