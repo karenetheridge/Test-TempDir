@@ -15,13 +15,6 @@ has dir => (
     handles => [qw(file subdir rmtree)],
 );
 
-has lock => (
-    isa => "File::NFSLock",
-    is  => "ro",
-    predicate => "has_lock",
-    clearer   => "clear_lock",
-);
-
 has cleanup_policy => (
     isa => enum([ qw(success always never) ]),
     is  => "rw",
@@ -59,16 +52,7 @@ sub delete {
 }
 
 sub release_lock {
-    my $self = shift;
-
-    $self->clear_lock;
-
-    # FIXME always unlock? or allow people to keep the locks around by enrefing them?
-
-    #if ( $self->has_lock ) {
-    #    $self->lock->unlock;
-    #    $self->clear_lock;
-    #}
+    # no more File::NFSLock
 }
 
 sub DEMOLISH {
@@ -136,7 +120,7 @@ The L<Path::Class::Dir> that is being managed.
 
 =head2 C<lock>
 
-An optional lock object (L<File::NFSLock>). Just kept around for reference counting.
+No longer used.
 
 =head2 C<cleanup_policy>
 

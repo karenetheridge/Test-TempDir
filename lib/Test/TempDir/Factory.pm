@@ -149,11 +149,8 @@ sub try_lock {
 
     return 1 if !$self->lock;
 
-    require File::NFSLock;
-    File::NFSLock->new({
-        file => $path->stringify . ".lock", # FIXME $path->file ? make sure it's not zapped by empty
-        %{ $self->lock_opts },
-    });
+    # no more File::NFSLock
+    return 1;
 }
 
 sub make_subdir {
@@ -216,26 +213,24 @@ __END__
 =head1 DESCRIPTION
 
 This class creates L<Test::TempDir::Handle> objects with the right C<dir>
-parameter, taking care of obtaining locks, creating directories, and handling
+parameter, creating directories, and handling
 fallback logic.
 
 =head1 ATTRIBUTES
 
 =head2 C<lock>
 
-Whether or not to enable locking.
-
-Defaults to true.
+No longer used.
 
 =head2 C<lock_opts>
 
-A hash reference to pass to L<File::NFSLock>.
+No longer used.
 
 Defaults to C<NONBLOCKING>
 
 =head2 C<lock_attempts>
 
-How many times to try to create and lock a directory.
+No longer used.
 
 Defaults to 2.
 
